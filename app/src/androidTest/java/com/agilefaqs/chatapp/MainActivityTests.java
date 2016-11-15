@@ -27,7 +27,7 @@ public class MainActivityTests {
             new ActivityTestRule<>(MainActivity.class);
 
     //A quick simple test case that fails as the messages relayed are not printed on the app's main activity.
-    
+
     @Test
     public void testGreet() throws InterruptedException {
 
