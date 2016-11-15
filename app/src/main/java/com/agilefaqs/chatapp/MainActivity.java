@@ -73,11 +73,11 @@ public class MainActivity extends AppCompatActivity {
                     messages.add(msg);
                     messagesAdaptor.notifyDataSetChanged();
                     messagesList.scrollToPosition(messagesAdaptor.getItemCount()-1);
-                    URL url = new URL("http://192.168.1.33:4567/send?message=" + msg);
+                    URL url = new URL("http://10.14.122.214:4567/send?message=" + msg);
                     urlConnection = (HttpURLConnection) url.openConnection();
                     new AsyncTask<HttpURLConnection, Object, Boolean>() {
                         @Override
-                        protected Boolean doInBackground(HttpURLConnection... params) {
+                        protected Boolean doInBackground(HttpURLConnection...    params) {
 
                             try {
                                 InputStream in = params[0].getInputStream();
@@ -137,13 +137,13 @@ public class MainActivity extends AppCompatActivity {
     private void downloadMessages() {
         HttpURLConnection urlConnection = null;
         try {
-            URL url = new URL("http://192.168.1.33:4567/fetchAllMessages");
+            URL url = new URL("http://10.14.122.214:4567/fetchAllMessages");
             urlConnection = (HttpURLConnection) url.openConnection();
             new AsyncTask<HttpURLConnection, Object, List<String>>() {
                 @Override
                 protected List<String> doInBackground(HttpURLConnection... params) {
 
-                    List<String> messages = null;
+                  //  List<String> messages = null;
                     try {
                         InputStream in = params[0].getInputStream();
                         InputStreamReader isw = new InputStreamReader(in);
