@@ -29,7 +29,7 @@ public class MainActivityTests {
     //A quick simple test case that fails as the messages relayed are not printed on the app's main activity.
 
     @Test
-    public void testGreet() throws InterruptedException {
+    public void testSendButton() throws InterruptedException {
 
         Espresso.onView(ViewMatchers.withId(R.id.messageInput)).check(ViewAssertions.matches(ViewMatchers.withHint("Enter message here")));
         Espresso.onView(ViewMatchers.withId(R.id.messageInput)).perform(ViewActions.typeText("Hike"));

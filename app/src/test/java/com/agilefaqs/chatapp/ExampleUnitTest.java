@@ -4,9 +4,12 @@ import android.content.Context;
 import android.graphics.Color;
 import android.provider.Settings;
 import android.test.ActivityInstrumentationTestCase2;
+import android.widget.Button;
+import android.widget.EditText;
 
 import com.confengine.chatapp.R;
 
+import org.junit.Assert;
 import org.junit.Test;
 import org.mockito.Mock;
 import org.mockito.Mockito;
@@ -30,7 +33,18 @@ public class ExampleUnitTest {
 
     @Test
     public void downloadMessagesTest() {
+        
+        Utils utilsTest = Mockito.mock(Utils.class);
 
+        final EditText messageInput =null;
+        Button sendButton = null;
 
+        try{
+            Mockito.doThrow(new NullPointerException("Null Check Ignored")).when(utilsTest).onClickListener(sendButton,messageInput,new MainActivity());
+        }
+        catch (Exception e)
+        {
+            System.out.print("Null check miss caught !");
+        }
     }
 }
